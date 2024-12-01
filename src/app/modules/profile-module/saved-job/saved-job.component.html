@@ -1,0 +1,72 @@
+<div class="section">
+    <div class="mainSection">
+        <div class="left">
+            <app-profile-sidebar></app-profile-sidebar>
+      </div>
+      <div class="right position-relative">
+        <app-profile-header></app-profile-header>
+            <div class="dashboard">
+
+                <div class="container">
+                    <div class="heading">
+                        <h2>Saved Job</h2>
+                        <div class="select-menu" [class.active]="isActiveSort">
+                            <div class="selectHead">Sort By: </div>
+                            <div class="select-btn" (click)="toggleMenuSort()">
+                                <span class="sBtn-text">{{ selectedOptionSort }}</span>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                            <ul class="options">
+                                <li class="option" *ngFor="let optionSort of optionsSort"
+                                    (click)="selectOptionSort(optionSort)"
+                                    [class.selected]="optionSort === selectedOptionSort">
+                                    <span class="option-text">{{ optionSort }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div *ngFor="let job of jobs ; let i = index" class="row bBox">
+                        <div class="box col-10">
+                            <div class="row">
+                                <div class="image col-sm-5">
+                                    <img [src]="job.image" alt="{{job.title}}">
+                                    <div>{{job.title}}</div>
+                                </div>
+                                <div class="col-sm-4 time">
+                                    <div>{{job.type}}</div>
+                                    <div>{{job.salary}} <span> / {{job.salaryPeriod}} . {{job.experienceLevel}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 add">
+                                    <div>{{job.location}}</div>
+                                    <div><span>{{job.field1}}</span>, <span>{{job.field2}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dot col-2 text-end">
+                            <i class="fa-solid fa-ellipsis-vertical main" (click)="toggleEditBox(i)">
+                                <div class="editBox" *ngIf="openEditBox === i">
+                                    <div><i class="fa-regular fa-eye"></i>View</div>
+                                    <div><i class="fa-solid fa-share"></i>Share</div>
+                                    <div><i class="fa-regular fa-pen-to-square"></i>Edit</div>
+                                    <div><i class="fa-solid fa-trash"></i>Delete</div>
+                                </div>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <span class="activeNum">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        ..
+                        <span>7</span>
+                        <span><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+</div>

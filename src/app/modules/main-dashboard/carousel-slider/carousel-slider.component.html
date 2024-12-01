@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="slider-wrapper">
+        <div class="content-section">
+            <div class="marketplace-tag">{{ currentSlide.tag }}</div>
+            <h1 class="main-heading">{{ currentSlide.heading }}</h1>
+            <p class="description">{{ currentSlide.description }}</p>
+            <div class="search-bar">
+                <div class="input-box">
+                    <div class="label">Job Categories</div>
+                    <select aria-label="Job Categories" [(ngModel)]="selectedCategory">
+                        <option value="designer">Designer</option>
+                        <option value="developer">Developer</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="sales">Sales</option>
+                    </select>
+                </div>
+                
+                <div class="input-box">
+                    <div class="label">Keywords or Title</div>
+                    <input type="text" placeholder="Design, branding" [(ngModel)]="keyword" aria-label="Keywords or Title">
+                </div>
+                <button type="button" (click)="search()">SEARCH</button>
+               
+            </div>
+            <!-- <button class="post-job-btn">Post a Job</button> -->
+        </div>
+        <div class="image-section">
+            <img [src]="currentSlide.image" alt="Job Marketplace" class="slider-image active">
+        </div>
+    </div>
+</div>

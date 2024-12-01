@@ -1,0 +1,125 @@
+<div class="sidebar">
+    <!-- Logo -->
+    <div class="d-flex justify-content-center align-items-center">
+    <a href="#"><img src="/assets/images/01.png" alt="Jobi" height="60"></a>
+    </div>
+  
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div class="profile-image">
+            <div class="status-badge"></div>
+        </div>
+        <div class="profileDropdown" (click)="toggleDropdown($event)">
+          <span class="profile-name">Rashed Kabir <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+          <div class="notification-dropdown" [class.hidden]="isDropdownHidden">
+              <div class="notification-item">
+                  <span class="notification-icon"><img src="/assets/icon/icon_2.svg" alt="mail icon"></span>
+                  <span class="notification-text">
+                      My Profile
+                  </span>
+              </div>
+              <div class="notification-item">
+                  <span class="notification-icon"><img src="/assets/icon/icon_7.svg" alt="job icon"></span>
+                
+                  <span class="notification-text">
+                      Account Settings
+                  </span>
+              </div>
+              <div class="notification-item">
+                  <span class="notification-icon"><img src="/assets/icon/icon_11.svg" alt="calendar icon"></span>
+                  <span class="notification-text">
+                      Notification
+                  </span>
+                 
+              </div>
+          </div>
+        </div>
+      
+        
+    </div>
+  
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/main/ProfileDashboard" routerLinkActive="active">
+            <span class="nav-icon">
+              <img src="/assets/icon/icon1.svg" alt="">
+            </span>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" routerLink="/main/myProfile" routerLinkActive="active">
+            <span class="nav-icon">
+              <img src="/assets/icon/icon_2.svg" alt="">
+            </span>
+            My Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" routerLink="/main/resume" routerLinkActive="active">
+            <span class="nav-icon">
+              <img src="/assets/icon/icon_3.svg" alt="">
+            </span>
+            Resume
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+            <a  class="nav-link" routerLink="/messages" routerLinkActive="active">
+                <span class="nav-icon">  <img src="/assets/icon/icon_4.svg" alt=""></span>
+                Messages
+            </a>
+        </li> -->
+        <li class="nav-item">
+            <a  class="nav-link" routerLink="/main/jobAlert" routerLinkActive="active">
+                <span class="nav-icon">
+                  <img src="/assets/icon/icon_5.svg" alt="">
+                </span>
+                Job Alert
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/main/savedJob" routerLinkActive="active">
+                <span class="nav-icon">
+                  <a href="#"><img src="/assets/icon/icon_6.svg" alt=""></a>
+                </span>
+                Saved Job
+            </a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" routerLink="/main/accountSettings" routerLinkActive="active">
+                <span class="nav-icon">
+                  <img src="/assets/icon/icon_7.svg" alt="">
+                </span>
+                Account Settings 
+            </a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" (click)="openDeleteDialog()">
+            <span class="nav-icon">
+              <img src="/assets/icon/icon_8.svg" alt="Delete Icon">
+            </span>
+            Delete Account
+          </a>
+        </li>
+        
+    </ul>
+  
+    <!-- Progress Section -->
+    <div class="progress-section">
+      <div class="progress-text">87%</div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="progress-text">Profile Complete</div>
+    </div>
+  
+    <!-- Logout Button -->
+    <a href="#" class="logout-btn">
+        <span class="nav-icon">
+          <img src="/assets/icon/icon_9.svg" alt="">
+        </span>
+        Logout
+    </a>
+  </div>

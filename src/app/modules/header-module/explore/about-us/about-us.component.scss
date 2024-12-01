@@ -1,0 +1,165 @@
+
+// .container{
+//   padding-top: 10px;
+// }
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a1a1a; /* Adjust color as needed */
+  }
+  .info-list {
+    list-style: none;
+    padding: 0;
+  }
+  .info-list-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  .info-list-item:last-child {
+    border-bottom: none;
+  }
+  .info-title {
+    font-weight: bold;
+    color: #1a1a1a;
+    cursor: pointer;
+  }
+  .info-icon {
+    float: right;
+    font-size: 1.2rem;
+    color: #1a1a1a; /* Adjust color as needed */
+  }
+
+
+
+
+
+
+
+
+
+  .stats-number {
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: bold;
+    color: #1a1a1a; /* Adjust color as needed */
+  }
+  .stats-label {
+    font-size: 1rem;
+    color: #6c757d; /* Muted text color */
+  }
+  .divider {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  .stats-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .stats-label {
+    font-size: 1.2rem;
+    color: #777;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .how-it-works {
+    background-color: #c9884f;
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-icon {
+    width: 55px;
+    height: 55px;
+    background-color: #f1811f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+}
+
+.step-icon i {
+    font-size: 25px;
+    color: #fff;
+}
+
+.step-content:hover .step-icon {
+    transform: scale(1.1);
+}
+
+
+
+.step-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+
+
+@media (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
+    
+    .step-content {
+        margin-bottom: 40px;
+    }
+    .card-style-two{
+        display: none;
+    }
+    .title-one .snap{
+        display: none;
+    }
+    .title-one span img{
+        display: none;
+    }
+    .shapes{
+        display: none;
+    }
+}
+
+
+.card-style-two.arrow::before, .card-style-two.arrow::after {
+    content: url('/assets/icon/arrow_01.svg');
+    position: absolute;
+    top: 25px;
+    left: -96px;
+}
+.card-style-two.arrow::after {
+    left: auto;
+    right: -96px;
+}
+
+.title-one span img {
+    top: -36px;
+    right: -96px;
+}
+.shapes {
+    position: absolute;
+    color: #f1811f;
+}

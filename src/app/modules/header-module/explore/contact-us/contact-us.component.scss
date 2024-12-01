@@ -1,0 +1,106 @@
+.container {
+    font-family: Calibri;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-size: 50px;
+}
+
+.address-block-one {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2em 1em;
+    margin-bottom: 1em;
+    border-radius: 0.3em;
+}
+
+.address-block-one .icon {
+    width: 80px;
+    height: 80px;
+    background: #eff6f3;
+}
+
+.address-block-one i {
+    font-size: 30px;
+    color: var(--btn-orange);
+}
+
+.address-block-one .title {
+    font-size: 24px;
+    padding: 20px 0 5px;
+}
+
+.address-block-one p {
+    font-size: 17px;
+    line-height: 1.76em;
+    color: #878787;
+}
+
+.address-block-one p .call {
+    font-size: 22px;
+    color: var(--btn-orange);
+    text-decoration: none;
+}
+
+.address-block-one p .webaddress {
+    color: var(--btn-orange);
+    text-decoration: none;
+}
+
+.address-block-one p .webaddress:hover {
+    counter-reset: var(--btn-hover-orange);
+    text-decoration: underline;
+}
+
+.address-block-one p .call:hover {
+    color: var(--btn-hover-orange);
+    text-decoration: underline;
+}
+
+.myform {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    border-radius: 0.3em;
+    margin: 1em 0;
+}
+
+.error-message, .success-message {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    font-size: 0.875rem;
+}
+
+.extra {
+    top: 100px;
+}
+
+.textArea {
+    height: 100px;
+}
+
+.form-outline {
+    margin-bottom: 1em;
+}
+
+.form-outline .form-control { 
+    min-height: 50px;
+}
+
+.submitBtn {
+    background-color: var(--btn-orange);
+    color: white;
+    border-radius: 0.3em;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.submitBtn:hover {
+    background-color: var(--btn-hover-orange);
+    cursor: pointer;
+}

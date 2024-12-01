@@ -1,0 +1,419 @@
+<div class="section">
+    <div class="mainSection">
+      <div class="left">
+        <app-profile-sidebar></app-profile-sidebar>
+      </div>
+      <div class="right position-relative">
+        <app-profile-header></app-profile-header>
+        <div class="dashboard">
+          <h2 class="main-title">My Resume</h2>
+  
+          <div class="resume-container">
+            <h2 class="resume-title">Resume Attachment</h2>
+            <label for="cv-upload" class="cv-label">CV Attachment*</label>
+            <div class="file-list">
+              <div class="file-item">
+                <span>MyCvResume.PDF</span>
+                <button class="remove-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+              </div>
+              <div class="file-item">
+                <span>CandidateCV02.PDF</span>
+                <button class="remove-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <div class="upload-btn">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Upload CV
+              <input type="file" id="cv-upload" name="cv-upload" placeholder="">
+            </div>
+            <small class="upload-info">Upload file .pdf, .doc, .docx</small>
+          </div>
+          <div class="resume-container">
+            <h2 class="resume-title">Intro & Overview</h2>
+            <label for="cv-upload" class="cv-label">Overview*</label>
+            <div class="input-wrapper">
+              <textarea class="description-input" placeholder="Write something interesting about you...."
+                aria-label="Resume description"></textarea>
+            </div>
+            <p class="helper-text">Brief description for your resume. URLs are hyperlinked.</p>
+  
+            <div class="upload-container">
+              <div class="video-container">
+                <img src="/assets/icon/video_post.jpg" alt="Video thumbnail" class="video-thumbnail">
+  
+                <div class="play-button" role="button" tabindex="0" aria-label="Play video">
+                  <a href="https://www.youtube.com/embed/aXFSJTjVjw0">
+                    <div class="play-icon"></div>
+                  </a>
+                </div>
+  
+                <button class="remove-button" aria-label="Remove video">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+              <label class="upload-area" role="button" tabindex="0">
+                <div class="upload-text">
+                  <span class="plus-icon">+</span>
+                  Add Intro Video
+                </div>
+                <input type="file" accept="video/*" style="display: none;">
+              </label>
+            </div>
+          </div>
+          <div class="resume-container">
+            <h2 class="resume-title">Education</h2>
+           
+            <div *ngFor="let visible of formsVisibility; let i = index" class="education-form" >
+              <div class="form-header" (click)="toggleForm(i)">
+                <h3>Add Education*</h3>
+                <svg
+                  class="arrow-icon"
+                  [class.collapsed]="!formsVisibility[i]"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </div>
+            
+              <div *ngIf="formsVisibility[i]" class="collapse show" id="educationForm">
+                <form>
+                   <div class="row">
+                       <div class="col-md-2">
+                        <label class="form-label required" for="title">Title*</label>
+                       </div>
+                       <div class="col-md-10">
+                        <div class="form-group">
+                        
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="title"
+                            placeholder="Product Designer (Google)"
+                            required
+                          />
+                        </div>
+                       </div>
+                   </div>
+            
+                   <div class="row">
+                       <div class="col-md-2">  <label class="form-label required" for="academy">Academy*</label></div>
+                       <div class="col-md-10">
+                        <div class="form-group">
+                        
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="academy"
+                            placeholder="Google Arts College & University"
+                            required
+                          />
+                        </div>
+                       </div>
+                   </div>
+            
+                 <div class="row">
+                     <div class="col-md-2">  <label class="form-label required">Year*</label></div>
+                     <div class="col-md-10">
+                      <div class="form-group">
+                      
+                        <div class="year-selects">
+                            <div class="dropdown">
+                                
+                                  <button class="dropdown-btn" (click)="toggleDropdown('from')">
+                                    {{ selectedFromYear }}
+                                    <i class="arrow" [ngClass]="{ 'down': !isFromDropdownOpen, 'up': isFromDropdownOpen }"></i>
+                                  </button>
+                                
+                                
+                              <div class="dropdown-content" *ngIf="isFromDropdownOpen">
+                                <a href="#" *ngFor="let year of years" (click)="selectFromYear(year)">{{ year }}</a>
+                              </div>
+                            </div>
+                            <div class="dropdown">
+                              <button class="dropdown-btn" (click)="toggleDropdown('to')">
+                                {{ selectedToYear }}
+                                <i class="arrow" [ngClass]="{ 'down': !isToDropdownOpen, 'up': isToDropdownOpen }"></i>
+                              </button>
+                              <div class="dropdown-content" *ngIf="isToDropdownOpen">
+                                <a href="#" *ngFor="let year of years" (click)="selectToYear(year)">{{ year }}</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-md-2">   <label class="form-label required" for="description">Description*</label></div>
+                     <div class="col-md-10">
+                      <div class="form-group">
+                     
+                        <textarea
+                          class="form-control"
+                          id="description"
+                          required
+                          placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
+                        ></textarea>
+                      </div>
+                     </div>
+                 </div>
+            
+                 
+                </form>
+              </div>
+            </div>
+            <div class="upload-btn">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+               Add More
+              <input type="file" id="cv-upload" name="cv-upload" placeholder="">
+            </div>
+          </div>
+          <div class="resume-container">
+            <h2 class="resume-title">Skills & Experience</h2>
+            <label for="cv-upload" class="cv-label">Add Skills*</label>
+             <div class="skills-wrapper">
+                  <ul class="style-none d-flex flex-wrap align-items-center">
+                     <li class="is_tag">
+                      <button>
+                        Figma 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        HTML5  
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        Illustrator  
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        Adobe Photoshop  
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        WordPress 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        jQuery  
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        Web Design  
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        Adobe XD 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="is_tag">
+                      <button>
+                        CSS 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                     <li class="more_tag">
+                      <button>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </button>
+                     </li>
+                  </ul>
+             </div>
+  
+             <label for="cv-upload" class="cv-label">Add Work Experience*</label>
+             <div *ngFor="let visible of formsShow; let i = index" class="education-form" >
+              <div class="form-header" (click)="toggleFormShow(i)">
+                <h3> Experience {{ i + 1 }}*</h3>
+                <svg
+                  class="arrow-icon"
+                  [class.collapsed]="!formsShow[i]"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </div>
+            
+              <div *ngIf="formsShow[i]" class="collapse show" id="educationForm">
+                <form>
+                   <div class="row">
+                       <div class="col-md-2">
+                        <label class="form-label required" for="title">Title*</label>
+                       </div>
+                       <div class="col-md-10">
+                        <div class="form-group">
+                        
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="title"
+                            placeholder="Lead Product Designer "
+                            required
+                          />
+                        </div>
+                       </div>
+                   </div>
+            
+                   <div class="row">
+                       <div class="col-md-2">  <label class="form-label required" for="academy">Company*</label></div>
+                       <div class="col-md-10">
+                        <div class="form-group">
+                        
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="academy"
+                            placeholder="Amazon Inc"
+                            required
+                          />
+                        </div>
+                       </div>
+                   </div>
+            
+                 <div class="row">
+                     <div class="col-md-2">  <label class="form-label required">Year*</label></div>
+                     <div class="col-md-10">
+                      <div class="form-group">
+                      
+                        <div class="year-selects">
+                            <div class="dropdown">
+                                
+                                  <button class="dropdown-btn" (click)="toggleDropdown('from')">
+                                    {{ selectedFromYear }}
+                                    <i class="arrow" [ngClass]="{ 'down': !isFromDropdownOpen, 'up': isFromDropdownOpen }"></i>
+                                  </button>
+                                
+                                
+                              <div class="dropdown-content" *ngIf="isFromDropdownOpen">
+                                <a href="#" *ngFor="let year of years" (click)="selectFromYear(year)">{{ year }}</a>
+                              </div>
+                            </div>
+                            <div class="dropdown">
+                              <button class="dropdown-btn" (click)="toggleDropdown('to')">
+                                {{ selectedToYear }}
+                                <i class="arrow" [ngClass]="{ 'down': !isToDropdownOpen, 'up': isToDropdownOpen }"></i>
+                              </button>
+                              <div class="dropdown-content" *ngIf="isToDropdownOpen">
+                                <a href="#" *ngFor="let year of years" (click)="selectToYear(year)">{{ year }}</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-md-2">   <label class="form-label required" for="description">Description*</label></div>
+                     <div class="col-md-10">
+                      <div class="form-group">
+                     
+                        <textarea
+                          class="form-control"
+                          id="description"
+                          required
+                          placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
+                        ></textarea>
+                      </div>
+                     </div>
+                 </div>
+            
+                 
+                </form>
+              </div>
+            </div>
+            <div class="upload-btn">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+               Add More
+              <input type="file" id="cv-upload" name="cv-upload" placeholder="">
+            </div>
+          </div>
+          <div class="resume-container">
+            <h2 class="resume-title">Portfolio</h2>
+                 <div class="row">
+                     <div class="col-lg-3 col-6">
+                         <div class="candidate-portfolio-block position-relative mb-5">
+                          <a href="#" class="d-block">
+                            <img src="assets/icon/portfolio1.jpg" alt="" class="lazy-img w-100">
+                          </a>
+                          <a href="#" class="remove-portfolio-item rounded-circle d-flex align-items-center justify-content-center tran3s">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </a>
+                         </div>
+                     </div>
+                     <div class="col-lg-3 col-6">
+                         <div class="candidate-portfolio-block position-relative mb-5">
+                          <a href="#" class="d-block">
+                            <img src="assets/icon/portfolio1.jpg" alt="" class="lazy-img w-100">
+                          </a>
+                          <a href="#" class="remove-portfolio-item rounded-circle d-flex align-items-center justify-content-center tran3s">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </a>
+                         </div>
+                     </div>
+                     <div class="col-lg-3 col-6">
+                         <div class="candidate-portfolio-block position-relative mb-5">
+                          <a href="#" class="d-block">
+                            <img src="assets/icon/portfolio1.jpg" alt="" class="lazy-img w-100">
+                          </a>
+                          <a href="#" class="remove-portfolio-item rounded-circle d-flex align-items-center justify-content-center tran3s">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </a>
+                         </div>
+                     </div>
+                     <div class="col-lg-3 col-6">
+                         <div class="candidate-portfolio-block position-relative mb-5">
+                          <a href="#" class="d-block">
+                            <img src="assets/icon/portfolio1.jpg" alt="" class="lazy-img w-100">
+                          </a>
+                          <a href="#" class="remove-portfolio-item rounded-circle d-flex align-items-center justify-content-center tran3s">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          </a>
+                         </div>
+                     </div>
+                 </div>
+           
+            <div class="upload-btn">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Add More
+              <input type="file" id="cv-upload" name="cv-upload" placeholder="">
+            </div>
+          
+            
+          </div>
+        </div>
+  
+       
+        <div class="button-group d-inline-flex align-items-center mt-3">
+            <a href="#" class="dash-btn-two tran3s me-3">Save</a>
+            <a href="#" class="dash-cancel-btn tran3s">Cancel</a>
+        </div>
+      </div>
+    </div>
+  
+  </div>

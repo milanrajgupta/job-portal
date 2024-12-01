@@ -1,0 +1,81 @@
+<app-header></app-header>
+ 
+ <div class="container">
+    <div class="faq-section">
+        <nav class="nav-tabs mb-4">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'all'"
+                 (click)="filterCategory('all')">All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'marketing'"
+                 (click)="filterCategory('marketing')">Marketing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'buying'"
+                 (click)="filterCategory('buying')">Buying</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'userManual'"
+                 (click)="filterCategory('userManual')">User Manual</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'payments'"
+                 (click)="filterCategory('payments')">Payments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'terms'"
+                 (click)="filterCategory('terms')">Terms & Conditions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" 
+                 [class.active]="selectedCategory === 'account'"
+                 (click)="filterCategory('account')">Account</a>
+            </li>
+          </ul>
+        </nav>
+    
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item" *ngFor="let faq of filteredFaqs; let i = index">
+            <h2 class="accordion-header">
+              <button 
+                class="accordion-button" 
+                [class.collapsed]="!faq.isOpen"
+                (click)="toggleFaq(i)"
+                [attr.aria-expanded]="faq.isOpen"
+                [attr.aria-controls]="'collapse' + i">
+                {{ faq.question }}
+                <span class="plus-icon">
+                  <i class="fas" [class.fa-plus]="!faq.isOpen" [class.fa-minus]="faq.isOpen"></i>
+                </span>
+              </button>
+            </h2>
+            <div 
+              [id]="'collapse' + i"
+              class="accordion-collapse collapse"
+              [class.show]="faq.isOpen">
+              <div class="accordion-body">
+                {{ faq.answer }}
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="text-center mt-5">
+          <h3 class="dont-get-answer">Don't get your answer?</h3>
+          <span routerLink="/contact">
+            <button class="btn contact-us-btn">Contact Us</button>
+          </span>
+        </div>
+      </div>
+ </div>
+
+
+ <app-footer></app-footer>

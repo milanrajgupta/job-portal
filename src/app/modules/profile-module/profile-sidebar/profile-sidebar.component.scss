@@ -1,0 +1,199 @@
+ol, ul {
+    padding-left: 0px;
+  }
+  a{
+    cursor: pointer;
+  }
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: url('/assets/testmo/img_14.jpg') no-repeat center center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .status-badge {
+    width: 12px;
+    height: 12px;
+    background-color: #86efac;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 2px solid white;
+  }
+  
+  .profile-name {
+    font-size: 14px;
+    color: #333;
+    // margin-bottom: 20px;
+  }
+  
+  .nav-menu {
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin-bottom: 15px;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #4b5563;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  // .nav-link:hover {
+  //   background-color: #f3f4f6;
+  // }
+  
+  // .nav-link.active {
+  //   background-color: #374151;
+  //   color: white;
+  // }
+  
+   .active {
+    background-color: var(--text-color);
+    color: white;
+    font-weight: bold;
+  }
+  .nav-icon img{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    color: #4b5563;
+  }
+  
+  .progress-section {
+    margin-top: auto;
+    padding: 20px 0;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #e5e7eb;
+    border-radius: 3px;
+    margin: 10px 0;
+  }
+  
+  .progress-fill {
+    width: 87%;
+    height: 100%;
+    background-color: #86efac;
+    border-radius: 3px;
+  }
+  
+  .progress-text {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #4b5563;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #f3f4f6;
+    border-radius: 8px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .profileDropdown{
+    position: relative;
+    cursor: pointer;
+    margin: 0px 20px;
+  }
+  .notification-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 14px;
+    z-index: 10;
+  }
+  
+  .notification-dropdown.hidden {
+    display: none;
+  }
+  .notification-dropdown .notification-item:hover{
+    color: var(--text-color);
+    background: #00000003
+  } 
+  .notification-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .notification-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+  }
+  
+  .notification-item:last-child {
+    border-bottom: none;
+  }
+  
+  .notification-icon {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .notification-text {
+    flex-grow: 1;
+  }
+  
+  .notification-text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px; /* Adjust as needed */
+  }
+  
+  
+  
+  @media (max-width: 768px){
+  .sidebar{
+    display: none;
+  }
+  }

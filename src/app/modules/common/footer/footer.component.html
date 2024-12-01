@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 footer-intro mb-15">
+                    <div class="logo mb-15">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./assets/images/01.png" alt="" width="120px">
+                        </a>
+                    </div>
+                    <!-- <img src="./assets/images/shape_28.svg" alt="" class="design"> -->
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+                    <h5 class="footer-title ">Services&ZeroWidthSpace;</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a href="#">Browse Jobs</a></li>
+                        <li><a href="#">Companies</a></li>
+                        <li><a href="#">Candidates</a></li>
+                        <!-- <li><a href="#">Pricing</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+                    <h5 class="footer-title ">Company</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a routerLink="/about">About Us</a></li>
+                        <li><a routerLink="/blog">Blogs</a></li>
+                        <li><a routerLink="/faq">FAQ’s</a></li>
+                        <!-- <li><a href="#">Contact</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+                    <h5 class="footer-title ">Support</h5>
+                    <ul class="footer-nav-link style-none">
+                        <li><a routerLink="/contact">Contact Us</a></li>
+                        <li><a href="#">Terms &amp; conditions</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <!-- <li><a href="#">Cookie policy</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-20 footer-newsletter">
+                    <h5 class="footer-title ">Newsletter</h5>
+                    <p class="">Join &amp; get important new regularly</p>
+                    <form class="d-flex">
+                        <input type="email" name="mail" placeholder="Enter your email*">
+                        <button>Send</button>
+                    </form>
+                    <p class="notes">We only send interesting and relevant emails.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div slot="bottom-footer" class="bottom-footer">
+        <div class="container">
+            <div class="row align-items-center d-flex justify-content-center align-items-center">
+                <div class="col-lg-4 order-lg-3 mb-15">
+                    <ul
+                        class="style-none d-flex order-lg-last justify-content-center justify-content-lg-end social-icon gap-3">
+                        <!-- <li><a href="#!"><i class="fa-brands fa-whatsapp"></i></a></li> -->
+                        <li><a href="#!"><i class="fa-brands fa-dribbble"></i></a></li>
+                        <li><a href="https://x.com/nighwantech"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="https://nighwantech.com/"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="https://www.instagram.com/nighwantech/"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 order-lg-1 mb-15">
+                    <ul class="d-flex style-none bottom-nav justify-content-center justify-content-lg-start gap-2">
+                        <li><a href="#">Privacy &amp; Terms.</a></li>
+                        <li><a routerLink="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 order-lg-2">
+                    <p class="text-center mb-15">info&#64;nighwantech.com &#64;2024.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="scroll-to-top" (click)="scrollToTop()" *ngIf="isVisible">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+</div>

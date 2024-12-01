@@ -1,0 +1,249 @@
+ol,
+ul {
+  padding-left: 0px;
+}
+.mainSection {
+  display: flex;
+}
+
+.right {
+  height: 100vh;
+  width: 100%;
+  background: rgb(240, 245, 243);
+  border-radius: 50px 0px 0px 50px;
+  padding: 100px 30px 50px;
+  overflow-y: scroll;
+}
+@media (max-width: 768px) {
+  .right {
+    padding: 104px 21px 50px;
+    border-radius: 50px 0px 0px 0px;
+  }
+}
+
+// savedJob CSS
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+// dropdown
+
+.select-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.selectHead {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.select-menu .select-btn {
+  width: 130px;
+  display: flex;
+  height: 30px;
+  padding: 1.4em 1em;
+  gap: 1em;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 2em;
+  border: 1px solid var(--bs-gray-600);
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.select-btn i {
+  font-size: 15px;
+  transition: 0.3s;
+}
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.select-menu .options {
+  position: absolute;
+  top: 100%;
+  right: 1em;
+  // padding: 20px;
+  margin-top: 2px;
+  width: 50%;
+  text-align: center;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1;
+}
+.select-menu.active .options {
+  display: block;
+}
+.options .option {
+  display: flex;
+  height: 30px;
+  cursor: pointer;
+  padding: 0 9px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+.options .option:hover {
+  background: #f2f2f2;
+  color: var(--text-color) !important;
+}
+.option .option-text {
+  font-size: 14px;
+  // color: #333;
+}
+
+// dropdownend
+
+.bBox {
+  background-color: white;
+  padding: 2em 1em;
+  border-radius: 0.5em;
+  margin: 1em 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.image div:hover {
+  cursor: pointer;
+  color: var(--bs-orange-100);
+  transition: all 0.3s ease-in-out;
+}
+
+.time, .add {
+  margin: 0.5em 0;
+}
+
+.time div:first-child {
+  color: var(--btn-orange);
+}
+
+.time div:first-child:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.red {
+  color: var(--text-color-red) !important;
+}
+
+.time div:last-child span {
+  font-weight: 400;
+  color: var(--bs-gray-600);
+}
+
+.add div:first-child {
+  font-weight: 400;
+  color: var(--bs-gray-800);
+  cursor: pointer;
+}
+
+.add span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dot {
+  font-size: 18px;
+  margin-top: 0.2em;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 500;
+  justify-content: end;
+  margin-top: 3em;
+}
+
+.number span {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.activeNum {
+  background-color: var(--btn-orange);
+  color: white;
+  border-color: var(--btn-orange) !important;
+}
+
+.dot .main {
+  position: relative;
+  padding: 0.5em;
+}
+
+.dot .main:hover {
+  color: var(--btn-orange);
+  cursor: pointer;
+}
+
+.editBox {
+  width: 110px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid var(--bs-gray-400);
+  border-radius: 0.3em;
+  right: 20px;
+  top: 25px;
+  z-index: 100;
+  font-size: 16px;
+  font-family: Calibri;
+  color: black;
+}
+
+.editBox div {
+  display: flex;
+  gap: 0.7em;
+  padding: 0.6em 0.8em;
+  transition: all 0.2s ease-in-out;
+}
+
+.editBox div:hover {
+  color: var(--btn-orange);
+  cursor: pointer;
+  background-color: var(--bs-gray-200);
+}
+
+
+@media (max-width: 850px) {
+  .left {
+    display: none;
+  }
+}

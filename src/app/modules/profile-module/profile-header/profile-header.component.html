@@ -1,0 +1,121 @@
+<div class="container-fluid">
+    <div class="header">
+      <div class="left">
+        <div class="logo">
+          <a routerLink="/main/dashboard"><img src="./assets/images/01.png" alt="" width="95px"></a>
+        </div>
+        <div class="searchBox">
+          <!-- <i class="fa-solid fa-trash"></i> -->
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" name="search" placeholder="Search here..">
+  
+          <div class="select-menu" [class.active]="isActive">
+            <div class="select-btn" (click)="toggleMenu()">
+              <span class="sBtn-text">{{ selectedOption }}</span>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <ul class="options">
+              <li class="option" *ngFor="let option of options" (click)="selectOption(option)"
+                [class.selected]="option === selectedOption">
+                <span class="option-text">{{ option }}</span>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="right">
+        <div class="menu">
+          <a routerLink="/main/common/findJob">Find Job</a>
+          <a routerLink="/main/common/findTalents">Find Talents</a>
+          <a class="hover-link drop">Explore
+            <div class="dropdown">
+              <ul>
+                <li><a routerLink="/main/common/aboutUs">About Us</a></li>
+                <li><a routerLink="/main/common/company">Company</a></li>
+                <li><a routerLink="/main/common/faq">Faq's</a></li>
+                <li><a routerLink="/main/common/contact">Contact Us</a></li>
+                <li><a routerLink="/main/common/blog">Blog</a></li>
+                <!-- <li><a routerLink="/main/ProfileDashboard">Candidate</a></li> -->
+              </ul>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="login" (click)="openLoginDialog()">
+          <span>Login</span>
+        </div> -->
+        <div class="register">
+          <span routerLink="/main/ProfileDashboard">Dashboard</span>
+        </div>
+  
+        <!------------------- bar----------------- -->
+        <div class="bar" (click)="toggleMenuTwo()">
+          <i [ngClass]="isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" [class.icon]="true" [class.fade]="isAnimating"
+            [class.show]="!isAnimating"></i>
+        </div>
+  
+        <div class="menuBar" [ngClass]="{'open': isOpen}">
+          <div class="logo">
+            <a routerLink="/main/dashboard"><img src="./assets/images/01.png" alt="" width="95px"></a>
+          </div>
+  
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <strong>Browse Category</strong>
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul class="style-none nav-item d-flex flex-column">
+                    <li><a href="#">Design &amp; Creative</a></li>
+                    <li><a href="#">It &amp; Development</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Web &amp; Mobile Dev</a></li>
+                    <li><a href="#">Writing</a></li>
+                    <li><a href="#">Sales &amp; Marketing</a></li>
+                    <li><a href="#">Music &amp; Audio</a></li>
+                    <li><a href="#">Video &amp; Animation</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <ul>
+              <li><a routerLink="/main/common/findJob"><strong>Find Job</strong></a></li>
+              <li><a routerLink="/talents"><strong>Find Talents</strong></a></li>
+            </ul>
+  
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  <strong>Explore</strong>
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <ul class="style-none nav-item d-flex flex-column">
+                    <li><a routerLink="/main/common/aboutUs">About Us</a></li>
+                    <li><a routerLink="/main/common/company">Company</a></li>
+                    <li><a routerLink="/main/common/faq">Faq's</a></li>
+                    <li><a routerLink="/main/common/contact">Contact Us</a></li>
+                    <li><a routerLink="/main/common/blog">Blog</a></li>
+                    <!-- <li><a routerLink="/main/ProfileDashboard">Candidate</a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="registerBar">
+              <span routerLink="">Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>

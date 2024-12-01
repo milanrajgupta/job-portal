@@ -1,0 +1,156 @@
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title h1 {
+    color: var(--bs-orange-100);
+    margin: 0;
+    font-weight: 600;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 45px;
+    line-height: 1.041em;
+  }
+  .title{
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .title .line {
+    height: 1px;
+    background: #e5e5e5;
+    flex: 1 1 auto !important;
+}
+
+  .steps-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+   .steps-container  .step::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--bg-color);
+    left: 0;
+    bottom: -5px;
+    transition: all .2s ease-in-out 0s;
+    opacity: 0;
+  }
+   .steps-container .step:hover::before  {
+    opacity: 1;
+}
+ 
+  .step {
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .step-number {
+    background-color: var(--bg-color);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .step:hover .step-number {
+    transform: scale(1.1);
+  }
+
+  .step-title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #1f3933;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .step-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Tablet Breakpoint */
+  @media (min-width: 768px) {
+    .steps-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 280px;
+      max-width: calc(50% - 20px);
+    }
+  }
+
+  /* Desktop Breakpoint */
+  @media (min-width: 1024px) {
+    .container {
+      padding: 40px 20px;
+    }
+
+    .steps-container {
+      flex-wrap: nowrap;
+    }
+
+    .step {
+      max-width: none;
+    }
+
+  }
+
+ 
+  /* Animation for step numbers */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .step-number {
+    animation: pulse 2s infinite;
+  }
+
+  /* Disable animations if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .step-number {
+      animation: none;
+    }
+    
+    .step:hover {
+      transform: none;
+    }
+    
+    .step:hover .step-number {
+      transform: none;
+    }
+  }

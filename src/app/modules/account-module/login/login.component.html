@@ -1,0 +1,79 @@
+
+<div class="container" *ngIf="isLoginPopupVisible">
+    <div class="register-form">
+        <span class="close" (click)="close()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+        <div class="form-header">
+            <h2>Hi, Welcome Back!</h2>
+            <p>Still don't have an account? <a (click)="navigateToSignUp()">Sign up</a></p>
+        </div>
+  
+        <!-- Candidates Registration Form -->
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group floating-label">
+                <input type="email" id="candidate-email" class="custom-input" placeholder=" " required>
+                <label for="candidate-email">Email*</label>
+            </div>
+            <div class="form-group floating-label">
+                <input 
+                    type="{{ showPassword ? 'text' : 'password' }}" 
+                    id="candidate-password" 
+                    class="custom-input" 
+                    placeholder=" " 
+                    formControlName="password" 
+                    required 
+                />
+                <label for="candidate-password">Password*</label>
+                
+                <!-- Eye Icon Button -->
+                <button 
+                    type="button" 
+                    class="eye-toggle" 
+                    (click)="togglePasswordVisibility()"
+                    aria-label="Toggle password visibility"
+                >
+                    <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" aria-hidden="true"></i>
+                </button>
+            </div>
+  
+            <div class="agreement-section">
+                <div class="form-check">
+                  <input type="checkbox" id="terms-employer" required>
+                  <label for="terms-employer">
+                      Keep me logged in
+                  </label>
+                </div>
+                <a href="#" class="forgot-password">Forget Password?</a>
+            </div>
+            <button type="submit" class="custom-button">Login</button>
+        </form>  
+  
+        <!-- Divider -->
+        <div class="divider">   
+            <div class="line"></div>
+            <span class="divider-text">OR</span>
+            <div class="line"></div>
+        </div>
+  
+        <!-- Social Signup Buttons -->
+        <div class="social-buttons">
+          <a href="#" class="social-button">
+              <img src="assets/icon/google.png" alt="Google Icon">
+              <span>Sign up with Google</span>
+          </a>
+          <a href="#" class="social-button">
+              <img src="assets/icon/facebook.png" alt="Facebook Icon">
+              <span>Sign up with Facebook</span>
+          </a>
+        </div>
+  
+        <!-- Sign In Link -->
+        <p class="account">Have an account? <a (click)="navigateToSignUp()">Sign Up</a></p>
+    </div>
+  </div>
+  
+  
+  
+  
+  

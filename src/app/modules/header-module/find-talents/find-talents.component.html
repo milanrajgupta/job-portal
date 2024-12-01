@@ -1,0 +1,358 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="job-listing-container">
+      <div class="left">
+        <button *ngIf="isSmallScreen" class="toggle-btn" (click)="toggleSidebar()">
+            <i class="fa fa-filter" aria-hidden="true"></i>
+            <span>Filter</span>
+          </button>
+          <div [class.filter-sidebar]="isSmallScreen" [class.filter-fullscreen]="!isSmallScreen"
+          [class.open]="isSidebarOpen || !isSmallScreen">
+            <div class="filter-section">
+                <button *ngIf="isSmallScreen" class="close-btn" (click)="toggleSidebar()">
+                    <i class="fa fa-times"></i>
+                  </button>
+                <div class="container">
+                  <div class="filter">
+                      <h4>Filter By</h4>
+                      <div class="accordion" id="accordionPanelsStayOpenExample">
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseOne">
+                                      Name or Keyword
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                  aria-labelledby="panelsStayOpen-headingOne">
+                                  <div class="accordion-body">
+                                      <div class="select-menu search-btn">
+                                          <input type="text" placeholder="Name or Keyword">
+                                          <i class="fa-solid fa-magnifying-glass"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseTwo">
+                                      Category
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                  aria-labelledby="panelsStayOpen-headingTwo">
+                                  <div class="accordion-body">
+                                      <div class="select-menu" [class.active]="isActiveCategory">
+                                          <div class="select-btn" (click)="toggleMenuCategory()">
+                                              <span class="sBtn-text">{{ selectedOptionCategory }}</span>
+                                              <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                          </div>
+                                          <ul class="options">
+                                              <li class="option" *ngFor="let optionCategory of optionsCategory"
+                                                  (click)="selectOptionCategory(optionCategory)"
+                                                  [class.selected]="optionCategory === selectedOptionCategory">
+                                                  <span class="option-text">{{ optionCategory }}</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseThree">
+                                      Loaction
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                  aria-labelledby="panelsStayOpen-headingThree">
+                                  <div class="accordion-body">
+                                      <div class="select-menu" [class.active]="isActiveLocation">
+                                          <div class="select-btn" (click)="toggleMenuLocation()">
+                                              <span class="sBtn-text">{{ selectedOptionLocation }}</span>
+                                              <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                          </div>
+                                          <ul class="options">
+                                              <li class="option" *ngFor="let optionLocation of optionsLocation"
+                                                  (click)="selectOptionLocation(optionLocation)"
+                                                  [class.selected]="optionLocation === selectedOptionLocation">
+                                                  <span class="option-text">{{ optionLocation }}</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseSix">
+                                      Expert Level
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                                  aria-labelledby="panelsStayOpen-headingSix">
+                                  <div class="accordion-body">
+                                      <ul class="style-none filter-input">
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Intermediate
+                                              </label>
+                                          </li>
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>No-Experience</label>
+                                          </li>
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Internship
+                                              
+                                              </label>
+                                          </li>
+                                          <li><input type="checkbox" name="JobType">
+                                              <label>Expert
+                                              </label>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseSeven">
+                                      Qualification
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                                  aria-labelledby="panelsStayOpen-headingSeven">
+                                  <div class="accordion-body">
+                                      <ul class="style-none filter-input">
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Master's Degree
+                                              </label>
+                                          </li>
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Bachelor Degree</label>
+                                          </li>
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>None
+                                              </label>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseEight">
+                                      Candidate Type
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
+                                  aria-labelledby="panelsStayOpen-headingEight">
+                                  <div class="accordion-body">
+                                      <ul class="style-none filter-input">
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Male
+                                              </label>
+                                          </li>
+                                          <li>
+                                              <input type="checkbox" name="JobType">
+                                              <label>Female</label>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+              
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseFour">
+                                      Salary Range
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                  aria-labelledby="panelsStayOpen-headingFour">
+                                  <div class="accordion-body">
+              
+                                      <div class="salary-range-filter">
+                                          <div class="filter-content" *ngIf="isExpanded">
+                                              <div class="range-slider-container">
+                                                  <div class="range-inputs">
+                                                      <input type="number" [(ngModel)]="minSalary" min="0" max="300">
+                                                      <span>-</span>
+                                                      <input type="number" [(ngModel)]="maxSalary" min="0" max="300">
+                                                      <span>USD</span>
+                                                  </div>
+                                                  <input type="range" min="0" max="300" [(ngModel)]="sliderValue"
+                                                      (input)="updateSalaryRange()" class="range-slider" />
+                                              </div>
+                                          </div>
+                                      </div>
+              
+                                      <div class="tags">
+                                          <input type="checkbox" id="toggle7" class="toggle" />
+                                          <label for="toggle7" class="color-box">Weekly</label>
+                                          <input type="checkbox" id="toggle8" class="toggle" />
+                                          <label for="toggle8" class="color-box">Monthly</label>
+                                          <input type="checkbox" id="toggle9" class="toggle" />
+                                          <label for="toggle9" class="color-box">Hourly</label>
+                                      </div>
+              
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                      aria-controls="panelsStayOpen-collapseFive">
+                                      English Fluency
+                                  </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                                  aria-labelledby="panelsStayOpen-headingFive">
+                                  <div class="accordion-body">
+                                      <div class="select-menu" [class.active]="isActiveLanguage">
+                                          <div class="select-btn" (click)="toggleMenuLanguage()">
+                                              <span class="sBtn-text">{{ selectedOptionLanguage }}</span>
+                                              <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                          </div>
+                                          <ul class="options">
+                                              <li class="option" *ngFor="let optionLanguage of optionsLanguage"
+                                                  (click)="selectOptionLanguage(optionLanguage)"
+                                                  [class.selected]="optionLanguage === selectedOptionLanguage">
+                                                  <span class="option-text">{{ optionLanguage }}</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+              
+                          <div class="fBtn btn">
+                              Apply Filter
+                          </div>
+                      </div>
+                  </div>
+              
+              
+              </div>
+               </div>
+          </div>
+      </div>
+      <div class="candidate-container">
+          <div class="countTextNu">
+          <div class="count-text">All candidates found</div>
+          <div class="sort-container">
+            <label for="sort-select">Sort by:</label>
+            <div class="custom-dropdown" (click)="toggleDropdown()">
+                <span>{{ selectedSortOption.label || 'Sort by' }}</span>
+                <i [class.rotate]="isDropdownOpen" class="fas fa-angle-down"></i>
+                <ul *ngIf="isDropdownOpen">
+                  <li *ngFor="let option of sortOptions" 
+                      (click)="selectOption(option, $event)" 
+                      [class.selected]="option.value === selectedSortOption.value">
+                    {{ option.label }}
+                  </li>
+                </ul>
+              </div>
+              
+              
+        </div>
+
+        </div>
+      
+          <div class="cards-grid">
+            <div class="candidate-card" *ngFor="let candidate of candidates">
+              
+              <!-- Featured Badge -->
+              <div class="featured-badge" *ngIf="candidate.isFeatured">
+                <i class="fas fa-star"></i>
+              </div>
+                
+               
+              <!-- Favorite Button -->
+              <button class="favorite-btn">
+                <i class="far fa-heart"></i>
+              </button>
+      
+              <!-- Main Content -->
+              <div class="card-content">
+                  <!-- Online Status Indicator -->
+                   <div class="tt">
+                <img [src]="candidate.image" [alt]="candidate.name" class="profile-image">
+                <div class="online-status" *ngIf="candidate.isOnline"></div>
+                </div>
+                <h3 class="candidate-name">{{candidate.name}}</h3>
+                <p class="candidate-role">{{candidate.role}}</p>
+      
+                <!-- Skills -->
+                <div class="skills-container">
+                  <span 
+                  class="skill-tag" 
+                  *ngFor="let skill of candidate.skills"
+                  [ngClass]="{'experience-tag': skill.includes('+')}">
+                  {{skill}}
+                </span>
+                </div>
+      
+                <!-- Salary and Location -->
+                <div class="info-section">
+                  <div class="info-item">
+                    <span class="label">Salary</span>
+                    <span class="value">{{candidate.salary}}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="label">Location</span>
+                    <span class="value">{{candidate.location}}</span>
+                  </div>
+                </div>
+      
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                  <button class="btn-primary-one" routerLink="/main/common/candidateProfile">View Profile</button>
+                  <button class="btn-secondary-two">Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="pagination-container">
+            <div class="pagination">
+              <button class="page-button active">1</button>
+              <button class="page-button">2</button>
+              <button class="page-button">3</button>
+              <button class="page-button next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="pagination-info">
+              Showing 1 to 20 of 1,270
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <app-footer></app-footer>

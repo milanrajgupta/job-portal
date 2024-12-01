@@ -1,0 +1,375 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Calibri;
+  }
+  
+  .container h1 {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .container h3 {
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+  
+  .container h2 {
+    font-size: 35px;
+  }
+  
+  .btns {
+    display: flex;
+    gap: 0.8em;
+    margin: 1em 0;
+  }
+  
+  .date {
+    color: var(--bs-gray-600);
+  }
+  
+  .date span {
+    font-weight: 600;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .date span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .btns span {
+    background-color: var(--txt-hover);
+    padding: 0.3em 0.8em;
+    border-radius: 0.3em;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  .btns span:hover {
+    background-color: var(--btn-orange);
+    color: white;
+    cursor: pointer;
+  }
+  
+  .contents {
+    border: 1px black solid;
+    border-radius: 0.5em;
+    padding: 1.5em 2.5em;
+    margin: 2em 0;
+  }
+  
+  .contents .headings {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .contents .headings h4 {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+  }
+  
+  .contents .headings p {
+    margin: 0;
+    padding: 0;
+    background-color: var(--btn-orange);
+    color: white;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .content p {
+    margin: 1em 0;
+    font-size: 19px;
+  }
+  
+  .content span {
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .content span:hover {
+    color: var(--btn-orange);
+  }
+  
+  .content ul {
+    margin: 1em 0;
+    font-size: 19px;
+  }
+  
+  .content ul li {
+    margin-bottom: 1em;
+  }
+  
+  .tick ul li::marker {
+    content: "✔  ";
+    font-family: bootstrap-icons;
+    color: var(--btn-orange);
+  }
+  
+  .side {
+    background-color: var(--txt-hover);
+    border-radius: 0.5em;
+    // margin-left: 2em;
+    padding: 1em;
+  }
+  
+  .side .logo {
+    text-align: center;
+  }
+  
+  .side .logo img {
+    margin: 1em 0;
+  }
+  
+  .side h3 {
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .btn-visit {
+    margin: 1.5em 0;
+    text-align: center;
+  }
+  
+  .btn-visit span {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--btn-orange);
+    color: white;
+    padding: 0.4em 1.5em;
+    border-radius: 1em;
+  }
+  
+  .btn-visit span:hover {
+    background-color: var(--btn-hover-orange);
+    cursor: pointer;
+  }
+  
+  .head {
+    font-size: 19px;
+    margin-top: 1em;
+    color: var(--bs-gray-600);
+  }
+  
+  .data {
+    font-size: 19px;
+    font-weight: 600;
+  }
+  
+  .social {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .social a {
+    color: black;
+  }
+  
+  .job-tags {
+    margin: 1em 0;
+  }
+  
+  .job-tags a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #0000007a;
+    line-height: 23px;
+    border: 1px solid var(--btn-orange);
+    border-radius: 30px;
+    margin: 0 4px 8px;
+    padding: 0 11px;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  
+  .job-tags a:hover {
+    background-color: var(--btn-orange);
+    color: white;
+  }
+  
+  .side .col-6 {
+    margin-bottom: 1em;
+  }
+  
+  .apply {
+    text-align: center;
+    background-color: var(--btn-orange);
+    color: white;
+    font-size: 20px;
+    padding: 0.2em 0.6em;
+    border-radius: 2em;
+    margin: 1em;
+    cursor: pointer;
+  }
+  
+  .apply:hover {
+    background-color: var(--btn-hover-orange);
+  }
+  
+  .row h4 {
+      font-size: 30px;
+      font-weight: 600;
+  }
+  
+  .row p {
+      font-size: 20px;
+      width: 98%;
+      margin-bottom: 1.5em;
+  }
+  
+  
+  .video-post {
+      background: url("https://jobi-svelte.vercel.app/assets/images/assets/img_45.jpg") no-repeat center;
+      background-size: cover;
+      height: 440px;
+      border-radius: 10px;
+      margin-bottom: 2em;
+  }
+  
+  .video-post .video-icon {
+      width: 65px;
+      height: 65px;
+      background: #ff4646;
+      color: #fff;
+      font-size: 40px;
+      line-height: 68px;
+  }
+  
+  
+  .tran3s {
+      transition: all .3s ease-in-out;
+  }
+  
+  .container-fluid {
+      background: #f8f9fa;
+      font-family: Calibri;
+  }
+  
+  
+  // slider css
+  
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; 
+    overflow: hidden;
+    margin: auto;
+  }
+  .title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 1em;
+    padding: 0 20px;
+  }
+  
+  .slide {
+    min-width: 50%; 
+    box-sizing: border-box;
+    padding: 20px 0;
+    // text-align: center;
+   
+  }
+  
+  .slide p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .slide .reviewer span {
+    color: var(--bs-gray-600);
+  
+  }
+  
+  .review {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #E1E1E1;
+  }
+  
+  .stars {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .rating {
+    color: #555;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .slide blockquote {
+    font-size: 17px;
+    line-height: 1.882em;
+    margin: 17px 0 25px;
+  }
+  .reviewer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .reviewer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .reviewer p{
+    margin-bottom: 0px;
+  }
+  .navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .navigation-dots span {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .navigation-dots .active {
+    background-color: var(--bg-color);
+  }
+  
+  /* Responsive: Show one slide at a time on smaller screens */
+  @media (max-width: 768px) {
+    .slide {
+      min-width: 100%; 
+    }
+   
+  }

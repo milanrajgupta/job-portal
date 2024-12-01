@@ -1,0 +1,147 @@
+<div class="section">
+    <div class="mainSection">
+      <div class="left">
+        <app-profile-sidebar></app-profile-sidebar>
+      </div>
+      <div class="right position-relative">
+        <app-profile-header></app-profile-header>
+        <div class="dashboard">
+          <div class="container">
+            <h2>My Profile</h2>
+            <div class="boxOne position-relative">
+              <div class="header">
+                <div class="image">
+                  <img src="https://jobi-svelte.vercel.app/assets/images/dashboard/avatar_02.jpg" alt="">
+                </div>
+                <div class="upload">
+                  <span>Upload new Photo</span>
+                </div>
+                <div class="delete">
+                  <span>Delete</span>
+                </div>
+              </div>
+              <mdb-form-control>
+                <input mdbInput type="text" id="name" class="form-control" />
+                <label mdbLabel class="form-label" for="name">Full Name*</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <textarea mdbInput class="form-control" id="bio" rows="5"></textarea>
+                <label mdbLabel class="form-label" for="bio">Bio*</label>
+              </mdb-form-control>
+              <p class="position-absolute line">Brief description for your profile. URLs are hyperlinked.</p>
+            </div>
+  
+            <div class="boxTwo">
+              <h3>Social Media</h3>
+              <mdb-form-control>
+                <input mdbInput type="text" id="typeText1" class="form-control" />
+                <label mdbLabel class="form-label" for="network1">Network 1</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <input mdbInput type="text" id="typeText2" class="form-control" />
+                <label mdbLabel class="form-label" for="network2">Network 2</label>
+              </mdb-form-control>
+              <div class="addMore">
+                <span>+ Add more link</span>
+              </div>
+            </div>
+  
+            <div class="boxTwo">
+              <h3>Address & Location</h3>
+              <mdb-form-control>
+                <input mdbInput type="text" id="address" class="form-control" />
+                <label mdbLabel class="form-label" for="address">Address*</label>
+              </mdb-form-control>
+  
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="select-menu" [class.active]="isActiveCountry">
+                    <div class="select-btn" (click)="toggleMenuCountry()">
+                      <span class="sBtn-text">{{ selectedOptionCountry }}</span>
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    <ul class="options">
+                      <li class="option" *ngFor="let optionCountry of optionsCountry"
+                        (click)="selectOptionCountry(optionCountry)"
+                        [class.selected]="optionCountry === selectedOptionCountry">
+                        <span class="option-text">{{ optionCountry }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+  
+                <div class="col-md-3">
+                  <div class="select-menu" [class.active]="isActiveCity">
+                    <div class="select-btn" (click)="toggleMenuCity()">
+                      <span class="sBtn-text">{{ selectedOptionCity }}</span>
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    <ul class="options">
+                      <li class="option" *ngFor="let optionCity of optionsCity" (click)="selectOptionCity(optionCity)"
+                        [class.selected]="optionCity === selectedOptionCity">
+                        <span class="option-text">{{ optionCity }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+  
+                <div class="col-md-3">
+                  <mdb-form-control>
+                    <input mdbInput type="text" id="zip" class="form-control" />
+                    <label mdbLabel class="form-label" for="zip">Zip*</label>
+                  </mdb-form-control>
+                </div>
+  
+                <div class="col-md-3">
+                  <div class="select-menu" [class.active]="isActiveState">
+                    <div class="select-btn" (click)="toggleMenuState()">
+                      <span class="sBtn-text">{{ selectedOptionState }}</span>
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    <ul class="options">
+                      <li class="option" *ngFor="let optionState of optionsState" (click)="selectOptionState(optionState)"
+                        [class.selected]="optionState === selectedOptionState">
+                        <span class="option-text">{{ optionState }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- <div class="map-frame mt-30">
+                <div class="gmap_canvas h-100 w-100">
+                  <iframe title="" class="gmap_iframe h-100 w-100" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=dhaka collage&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                  </iframe>
+                </div>
+              </div> -->
+  
+              <mdb-form-control>
+                <input mdbInput type="text" id="location" class="form-control" />
+                <label mdbLabel class="form-label" for="location">Location*</label>
+              </mdb-form-control>
+  
+              <div class="map-area mb-6 ">
+                <div class="gmap_canvas h-100 w-100">
+                  <iframe class="gmap_iframe h-100 w-100"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d91105.70997281105!2d90.375325!3d23.807493!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8c8e1ea9fd1%3A0xa6e274882fdbce53!2sDhaka%20College!5e1!3m2!1sen!2sus!4v1731315189205!5m2!1sen!2sus">
+                  </iframe>
+                </div>
+              </div>
+  
+  
+            </div>
+            <div class="footer">
+              <div class="upload save">
+                <span>Save</span>
+              </div>
+              <div class="delete cancel">
+                <span>Cancel</span>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

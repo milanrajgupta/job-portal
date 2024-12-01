@@ -1,0 +1,92 @@
+<app-header>
+</app-header>
+<div class="container">
+    <h1>Get in touch</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address-block-one text-center mb-40 wow fadeInUp">
+                        <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h5 class="title">Our Address</h5>
+                        <p>Nighwan, Kurtha, Gaya, BR <br>Bihar</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="address-block-one text-center mb-40 wow fadeInUp">
+                        <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h5 class="title">Contact Info</h5>
+                        <p>Open a chat or give us call at <br><a href="tel:310.841.5500" class="call">+91 8092225777</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="address-block-one text-center mb-40 wow fadeInUp">
+                        <div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto">
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+                        <h5 class="title">Live Support</h5>
+                        <p>live chat service <br><a href="#!" class="webaddress">https://nighwantech.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="myform">
+        <form [formGroup]="validationForm" class="row">
+            <div class="mb-3 pb-3 col-md-6">
+                <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="form1" class="form-control" formControlName="inputName"
+                        required />
+                    <label mdbLabel class="form-label" for="form1">Name*</label>
+                    <mdb-error *ngIf="inputName?.invalid && (inputName?.dirty || inputName?.touched)">Name invalid</mdb-error>
+                    <mdb-success *ngIf="inputName?.valid && (inputName?.dirty || inputName?.touched)">Name valid</mdb-success>
+                </mdb-form-control>
+            </div>
+
+            <div class="col-md-6 mb-3 pb-3">
+                <mdb-form-control>
+                    <input mdbValidate mdbInput type="email" id="form1" class="form-control" formControlName="inputEmail"
+                        required />
+                    <label mdbLabel class="form-label" for="form1">Email*</label>
+                    <mdb-error *ngIf="inputEmail?.invalid && (inputEmail?.dirty || inputEmail?.touched)">Email invalid</mdb-error>
+                    <mdb-success *ngIf="inputEmail?.valid && (inputEmail?.dirty || inputEmail?.touched)">Email valid</mdb-success>
+                </mdb-form-control>
+            </div>
+
+            <div class="col-md-12 mb-3 pb-3">
+                <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="form1" class="form-control" />
+                    <label mdbLabel class="form-label" for="form1">Subject (optional)</label>
+                    <!-- <mdb-error *ngIf="input?.invalid && (input?.dirty || input?.touched)">Input invalid</mdb-error>
+                    <mdb-success *ngIf="input?.valid && (input?.dirty || input?.touched)">Input valid</mdb-success> -->
+                </mdb-form-control>
+            </div>
+
+            <div class="col-md-12 mb-3 pb-3">
+                <mdb-form-control>
+                    <textarea mdbValidate mdbInput type="text" id="form1" class="form-control textArea"
+                        formControlName="textarea" required></textarea>
+                    <label mdbLabel class="form-label" for="form1">Your Message*</label>
+                    <mdb-error *ngIf="textarea?.invalid && (textarea?.dirty || textarea?.touched)" class="extra">Message
+                        invalid</mdb-error>
+                    <mdb-success *ngIf="textarea?.valid && (textarea?.dirty || textarea?.touched)" class="extra">Message
+                        valid</mdb-success>
+                </mdb-form-control>
+            </div>
+
+            <div class="col-md-12 mb-3 pb-3 text-center">
+                <div class="submitBtn">SEND MESSAGE</div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-footer>
+</app-footer>

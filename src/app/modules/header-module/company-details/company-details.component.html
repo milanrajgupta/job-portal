@@ -1,0 +1,119 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Company Details</h1>
+    <h3>Find company details here</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Overview</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Vulputate odio
+                ut enim blandit. Nibh ipsum consequat nisl vel pretium lectus quam.</p>
+            <p>Nulla at volutpat diam ut. Lobortis feugiat vivamus at augue eget arcu. Urna condimentum mattis
+                pellentesque id nibh tortor id aliquet. Dignissim cras tincidunt lobortis feugiat. Est sit amet
+                facilisis magna etiam tempor. Eu augue ut lectus arcu bibendum at varius vel pharetra. Vel facilisis
+                volutpat est velit egestas dui id. Ut pharetra sit amet aliquam. Elit at imperdiet dui accumsan sit amet
+                nulla facilisi morbi. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Magna fringilla
+                urna porttitor rhoncus. Et odio pellentesque diam volutpat. Congue eu consequat ac felis donec et odio
+                pellentesque diam. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu.</p>
+            <p>Felis eget velit aliquet sagittis id. Massa placerat duis ultricies lacus sed turpis tincidunt id. Vel
+                eros donec ac odio tempor orci dapibus ultrices. Ipsum consequat nisl vel pretium lectus quam. Dignissim
+                sodales ut eu sem.</p>
+
+            <h4>Intro</h4>
+            <div class="video-post d-flex align-items-center justify-content-center mb-50">
+                <a class="fancybox rounded-circle video-icon tran3s text-center" data-fancybox=""
+                    href="https://www.youtube.com/embed/aXFSJTjVjw0" target="_blank">
+                    <i class="fa-solid fa-play"></i></a>
+            </div>
+
+            <div class="slider-container">
+                <div class="title">
+                  <h2>Company Reviews</h2>
+                  <div class="navigation-dots">
+                      <span *ngFor="let dot of [0, 1, 2]; let i = index" (click)="setCurrentSlideGroup(i)" [class.active]="i === currentDot"></span>
+                    </div>
+                </div>
+              <div class="slides">
+                <div class="slide" *ngFor="let review of reviews">
+                  <div class="review">
+                    <div class="stars">
+                      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                      <span class="rating">{{ review.rating }} out of 5</span>
+                    </div>
+                   <blockquote> {{ review.text }}</blockquote>
+                    <div class="reviewer">
+                      <img [src]="review.avatar" alt="Avatar of {{ review.name }}" />
+                      <div>
+                        <p>{{ review.name }}</p>
+                        <span>{{ review.location }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="side">
+                <div class="logo">
+                    <img src="./assets/icon/media_37 .png" alt="">
+                </div>
+                <h3>Adobe Inc.</h3>
+                <div class="btn-visit">
+                    <span>Visit our website</span>
+                </div>
+                <hr>
+                <div>
+                    <div class="head">Location:</div>
+                    <div class="data">Spain, Barcelona</div>
+                </div>
+                <div>
+                    <div class="head">Size:</div>
+                    <div class="data">7000-8000, Worldwide</div>
+                </div>
+                <div>
+                    <div class="head">Email:</div>
+                    <div class="data">companyinquery.company</div>
+                </div>
+                <div>
+                    <div class="head">Founded:</div>
+                    <div class="data">13 jan, 1997</div>
+                </div>
+                <div>
+                    <div class="head">Phone:</div>
+                    <div class="data">990 23455679,
+                        <br>+770 789789897
+                    </div>
+                </div>
+                <div>
+                    <div class="head">Category:</div>
+                    <div class="data">Technology, Product, Agency
+                    </div>
+                </div>
+                <div>
+                    <div class="head">Social:</div>
+                    <div class="data social">
+                        <a href="#!"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#!"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#!"><i class="fa-brands fa-google"></i></a>
+                        <a href="#!"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="apply">
+                    Send Message
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <app-new-job-list></app-new-job-list>
+
+</div>
+<app-footer></app-footer>

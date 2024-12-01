@@ -1,0 +1,26 @@
+<div class="slider-container">
+    <h2>Trending Services</h2>
+    <div class="slider-wrapper">
+      <div class="slider" [style.transform]="transformValue">
+        <div *ngFor="let slide of slides" class="slide">
+          <div class="image-wrapper">
+            <img [src]="slide.image" alt="{{ slide.title }}" />
+            <div class="overlay"></div>
+            <div class="content-bottom">
+              <h3>{{ slide.title }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Dots navigation -->
+    <div class="slider-dots">
+      <div *ngFor="let dot of [0, 1, 2, 3]; let i = index"
+           class="slider-dot"
+           [class.active]="getActiveDot() === i"
+           (click)="goToSection(i)">
+      </div>
+    </div>
+  </div>
+  

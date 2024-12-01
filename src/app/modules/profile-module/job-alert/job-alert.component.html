@@ -1,0 +1,120 @@
+<div class="section">
+    <div class="mainSection">
+        <div class="left">
+          <app-profile-sidebar></app-profile-sidebar>
+      </div>
+      <div class="right position-relative">
+        <app-profile-header></app-profile-header>
+            <div class="dashboard">
+                <div class="job-alert-container">
+                    <h2 class="main-title">Job Alerts</h2>
+                    <div class="sort-container">
+                        <label for="sort-select">Sort by:</label>
+                        <div class="custom-dropdown" (click)="toggleDropdown()">
+                            <span>{{ selectedSortOption.label || 'Sort by' }}</span>
+                            <i [class.rotate]="isDropdownOpen" class="fas fa-angle-down"></i>
+                            <ul *ngIf="isDropdownOpen">
+                              <li *ngFor="let option of sortOptions" 
+                                  (click)="selectOption(option, $event)" 
+                                  [class.selected]="option.value === selectedSortOption.value">
+                                {{ option.label }}
+                              </li>
+                            </ul>
+                          </div>
+                          
+                          
+                    </div>
+                </div>
+                  
+                <div class="resume-container">
+                  <div class="table-container">
+                        <table class="job-table">
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                              <th>Alert</th>
+                              <th>Job</th>
+                              <th>Time</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let job of jobs; let i = index">
+                              <td>{{ job.title }}</td>
+                              <td>
+                                <span class="alert-tag" [class.fulltime]="job.alertType === 'Fulltime'" [class.part-time]="job.alertType === 'Part-Time'">
+                                  {{ job.alertType }}
+                                </span>
+                                <span class="alert-details">{{ job.alertDetails }}</span>
+                              </td>
+                              <td>Jobs found {{ job.jobsFound }}</td>
+                              <td>{{ job.time }}</td>
+                              <td>
+                                <div class="profileDropdown">
+                                  <!-- Button that opens the dropdown -->
+                                  <button class="action-button menu-button" (click)="toggleDropdownShow($event, i)">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                  </button>
+                              
+                                  <!-- Dropdown menu -->
+                                  <ul class="notification-dropdown" [class.hidden]="isDropdownHidden[i]">
+                                    <li class="notification-item">
+                                      <img src="assets/icon/icon_18.svg" alt="View" class="dropdown-icon">
+                                      <a href="#">
+                                        View
+                                      </a>
+                                    </li>
+                                    <li class="notification-item">
+                                      <img src="assets/icon/icon_19.svg" alt="Share" class="dropdown-icon">
+                                      <a href="#">
+                                        Share
+                                      </a>
+                                    </li>
+                                    <li class="notification-item">
+                                      <img src="assets/icon/icon_20.svg" alt="Edit" class="dropdown-icon">
+                                      <a href="#">
+                                        Edit
+                                      </a>
+                                    </li>
+                                    <li class="notification-item">
+                                      <img src="assets/icon/icon_21.svg" alt="Delete" class="dropdown-icon">
+                                      <a href="#">
+                                        Delete
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                     
+                      </div>
+                </div>
+
+
+            </div>
+
+            <div class="pagination">
+              <button class="pagination-btn" disabled>
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              </button>
+            
+              <button class="pagination-btn active">1</button>
+              <button class="pagination-btn">2</button>
+              <!-- <button class="pagination-btn">3</button> -->
+               ...
+              <button class="pagination-btn">4</button>
+              <button class="pagination-btn">5</button>
+            
+              <button class="pagination-btn">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+            
+
+
+        </div>
+    </div>
+
+</div>

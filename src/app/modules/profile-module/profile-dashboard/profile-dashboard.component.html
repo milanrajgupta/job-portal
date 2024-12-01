@@ -1,0 +1,166 @@
+<div class="section">
+    <div class="mainSection">
+      <div class="left">
+        <app-profile-sidebar></app-profile-sidebar>
+      </div>
+      <div class="right position-relative">
+        <app-profile-header></app-profile-header>
+        <div class="dashboard">
+          <h2 class="main-title">Dashboard</h2>
+          <div class="metrics-cards">
+             
+            <div class="card">
+  
+              <div class="details">
+                <h2>1.7k+</h2>
+                <p>Total Visitors</p>
+              </div>
+              <div class="icon"><i class="material-icons">person</i></div>
+            </div>
+            <div class="card">
+  
+              <div class="details">
+                <h2>03</h2>
+                <p>Shortlisted</p>
+              </div>
+              <div class="icon"><i class="material-icons">bookmark</i></div>
+            </div>
+            <div class="card">
+  
+              <div class="details">
+                <h2>2.1k</h2>
+                <p>Views</p>
+              </div>
+              <div class="icon"><i class="material-icons">visibility</i></div>
+            </div>
+            <div class="card">
+  
+              <div class="details">
+                <h2>07</h2>
+                <p>Applied Jobs</p>
+              </div>
+              <div class="icon"><i class="material-icons">assignment</i></div>
+            </div>
+          </div>
+  
+          <!-- Recent Applications Section -->
+          <div class="row">
+            <div class="col-md-7">
+              <div class="graph-container">
+                <div class="graph-header">
+                  <div class="jobs-header">
+                    <h2>Profile Views</h2>
+                  </div>
+                  <div class="time-toggles">
+                    <button class="time-toggle">1h</button>
+                    <button class="time-toggle active">Day</button>
+                    <button class="time-toggle">Week</button>
+                    <button class="time-toggle">Month</button>
+                    <button class="time-toggle">Year</button>
+                  </div>
+                </div>
+                <div class="graph">
+                  <div class="y-axis">
+                    <span>500</span>
+                    <span>300</span>
+                    <span>200</span>
+                    <span>100</span>
+                    <span>50</span>
+                  </div>
+                  <div class="graph-grid">
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                  </div>
+                  <svg class="graph-svg" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#2E7D32" stop-opacity="0.2" />
+                        <stop offset="100%" stop-color="#2E7D32" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path class="graph-area"
+                      d="M0 280 L50 200 L100 150 L150 250 L200 100 L250 50 L300 150 L350 200 L400 280 L400 280 L0 280 Z" />
+                    <path class="graph-line"
+                      d="M0 280 L50 200 L100 150 L150 250 L200 100 L250 50 L300 150 L350 200 L400 280" />
+                    <circle class="data-point" cx="0" cy="280" r="4" />
+                    <circle class="data-point" cx="50" cy="200" r="4" />
+                    <circle class="data-point" cx="100" cy="150" r="4" />
+                    <circle class="data-point" cx="150" cy="250" r="4" />
+                    <circle class="data-point highlight" cx="200" cy="100" r="4" />
+                    <circle class="data-point" cx="250" cy="50" r="4" />
+                    <circle class="data-point" cx="300" cy="150" r="4" />
+                    <circle class="data-point" cx="350" cy="200" r="4" />
+                    <circle class="data-point" cx="400" cy="280" r="4" />
+                  </svg>
+                </div>
+                <div class="x-axis">
+                  <span>Sun</span>
+                  <span>Sat</span>
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
+                  <span>Sat</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="jobs-container">
+                <div class="jobs-header">
+                  <h2>Recent Applied Job</h2>
+                </div>
+                <ul class="job-list">
+                  <li *ngFor="let job of jobItems; let i = index" class="job-item">
+                    <img [src]="job.logo" alt="" class="company-logo">
+                    <div class="job-details">
+                      <div class="job-title">{{ job.title }}</div>
+                      <div class="job-meta">
+                        <span class="job-type">{{ job.type }}</span>
+                        <span class="job-location">{{ job.location }}</span>
+                      </div>
+                    </div>
+  
+  
+                    <div class="profileDropdown">
+                      <button class="menu-button" (click)="toggleDropdown($event, i)">
+                        <div class="menu-dots">
+                          <div class="dot"></div>
+                          <div class="dot"></div>
+                          <div class="dot"></div>
+                        </div>
+                      </button>
+                      <ul class="notification-dropdown" [class.hidden]="isDropdownHidden[i]">
+                        <li class="notification-item">
+                          <a href="#">
+                            View Job
+                          </a>
+                        </li>
+                        <li class="notification-item">
+                          <a href="#">
+                            Archive
+                          </a>
+                        </li>
+                        <li class="notification-item">
+                          <a href="#" class="danger">
+                            Delete
+                          </a>
+                        </li>
+  
+                      </ul>
+                    </div>
+  
+                  </li>
+                </ul>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

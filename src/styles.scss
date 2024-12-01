@@ -1,1 +1,140 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$jobPortal-primary: mat.define-palette(mat.$indigo-palette);
+$jobPortal-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$jobPortal-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$jobPortal-theme: mat.define-light-theme((
+  color: (
+    primary: $jobPortal-primary,
+    accent: $jobPortal-accent,
+    warn: $jobPortal-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($jobPortal-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+:root {
+  --text-02: #4987a0;
+  --bg-01: #0000000a;
+  --text-green: #00bf58;
+  --btn-hover-orange: #f89945;
+  --btn-text: #fff;
+  --bg-footer: rgb(255, 251, 242);
+  --txt-color: #fff;
+  --text-grey:#666;
+  --btn-orange: #f1811f;
+  --bg-color: #f1811f;
+  --text-color:#f1811f;
+  --bs-orange-100: rgb(255, 176, 73);
+  --text-color-green: #06bd5b;
+  --text-color-red: #ff0000;
+  --btn-text: #fff;
+  --txt-color: #fff;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --fontw-400: 400;
+  --fontw-500: 500;
+  --fontw-600: 600;
+  --fontf: Celibri;
+  --bs-border-style: solid;
+  --bs-border-width: 1px;
+  --bs-border-color: #dee2e6;
+  --bs-white-rgb: 255, 255, 255;
+  --txt-hover: antiquewhite;
+  --text-02: #4987a0;
+  --bg-01: #0000000a;
+  --bg-02:rgb(255, 248, 234);
+  --btn-orange: #f1811f;
+  --btn-hover-orange: #f89945;
+  --btn-text: #fff;
+
+  --base-font-size-15: 15px;
+  --base-font-size: 16px; /* Default base font size */
+  --font-small: calc(var(--base-font-size) * 0.875); /* Small text (14px) */
+  --font-normal: var(--base-font-size); /* Normal text (16px) */
+  --font-medium: calc(var(--base-font-size) * 1.125); /* Medium text (18px) */
+  --font-large: calc(var(--base-font-size) * 1.25); /* Large text (20px) */
+  --font-xlarge: calc(var(--base-font-size) * 1.5); /* Extra large text (24px) */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@mixin custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #f1811f #f1f1f1;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #f1811f;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #e85d1f;
+    }
+  }
+}
+
+
+* {
+  @include custom-scrollbar;
+}
+
+.custom-scrollbar {
+  @include custom-scrollbar;
+}
+
+
+
+
+
